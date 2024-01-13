@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="837.6,4350.4" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="837.6,565.6" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -38,6 +38,30 @@
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>UiPath.GSuite.Activities.Drive.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.GSuite.Drive.Models</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.GSuite.Activities.Sheets.Enums</x:String>
+      <x:String>UiPath.GSuite.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Files.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Excel.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Excel</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>Microsoft.Graph</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -100,14 +124,23 @@
       <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
       <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="643.2,4285.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="449.6,379.2" sap2010:WorkflowViewState.IdRef="Sequence_10">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="CarBudget" />
-      <Variable x:TypeArguments="x:String" Name="message" />
-      <Variable x:TypeArguments="x:String" Name="marca" />
-      <Variable x:TypeArguments="x:String" Name="model" />
       <Variable x:TypeArguments="x:String" Name="carName" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -115,239 +148,19 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="580.8,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Give a car budget" Title="Budget">
-      <ui:InputDialog.Result>
-        <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">CarBudget</CSharpReference>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AskChatGpt.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="AskChatGpt.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="carName">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">carName</CSharpReference>
         </OutArgument>
-      </ui:InputDialog.Result>
-    </ui:InputDialog>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: ChatGPT" sap:VirtualizedContainerService.HintSize="580.8,1433.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="2d0b8c9f-f345-40ed-a521-31fde89143eb" Version="V2">
-      <uix:NApplicationCard.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,1216.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="433.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_1">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">
-                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">message</CSharpReference>
-                </OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">"recomanda-mi o singura masina cu pretul in jur de " + CarBudget + " euro, doar numele, fara detalii"</CSharpValue>
-                </InArgument>
-              </Assign.Value>
-            </Assign>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'TEXTAREA prompt-textarea'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="2d0b8c9f-f345-40ed-a521-31fde89143eb" Version="V3">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="https://chat.openai.com/" CvTextArea="665, 947, 178, 22" CvTextArgument="Message ChatGPT..." CvType="Text" DesignTimeRectangle="648, 923, 958, 65" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'TEXTAREA prompt-textarea'" FullSelectorArgument="&lt;webctrl id='prompt-textarea' tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl id='prompt-textarea' tag='TEXTAREA' type='' class='m-0 w-full resize-none border-0 bg-transparent py-[10px] pr-10 focus:ring-0 focus-visible:ring-0 dark:bg-transparent md:py-3.5 md:pr-12 placeholder-black/50 dark:placeholder-white/50 pl-3 md:pl-4' aaname='' /&gt;" Guid="a4616ac1-cc11-42b7-b993-ee8d5ca98977" InformativeScreenshot="04ee54d74fe54a682f76bdea511cc057.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ChatGPT' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
-              </uix:NTypeInto.Target>
-              <uix:NTypeInto.Text>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">message</CSharpValue>
-                </InArgument>
-              </uix:NTypeInto.Text>
-            </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="3" DisplayName="Click 'SVG'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2d0b8c9f-f345-40ed-a521-31fde89143eb" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://chat.openai.com/" CvElementArea="1548, 931, 47, 48" CvType="Icon" DesignTimeRectangle="1557, 940, 30, 30" DesignTimeScaleFactor="1.25" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;span&amp;gt;svg' parentid='__next' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='__next' tag='svg' class='text-white dark:text-black' aaname='' /&gt;" Guid="68a5a734-f09a-45f2-b8c2-1e1908214679" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEESURBVFhH7ZjNDYMwDEY9CkO0d5iM9tgpGKE99M4orEBF76k+hJHl0io/oPiQJ1mEiMQvAUUkdDo3juNyvblxfLlpersjQf/Ig3ycexW5P56HC2iQD3lXkRwSDMsQpieXBIP8hHdlAco9Gwwt1+wUEU2ySNu2c6SSJFLXtSOiOaqqWmrjiBaREnvIRIlsSXDEygSL6NchJWR9KEEiUgLlvu/X+67rviRD8BbREkCKoDwMQ7SMlwhGy52zBNAiQMugrQ9eIugco5MSYEsE4HmsLWgj6/8R/LFKfonEUEQ0RURTRDS7iWDtSCFJBJj4MdoTOyJm9jVmdnpm9r5mTgNsnI807gNn69m10uHcbQAAAABJRU5ErkJggg==" InformativeScreenshot="34fea0ba84827bb3c071a430b425f63b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ChatGPT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NGetText DelayAfter="0" DisplayName="Get Text 'Dacia Logan.'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="2d0b8c9f-f345-40ed-a521-31fde89143eb" Version="V3">
-              <uix:NGetText.Target>
-                <uix:TargetAnchorable BrowserURL="https://chat.openai.com/c/0c96356e-34a1-4d8b-a6ff-877405229935" CvTextArea="719, 426, 117, 22" CvType="AnyWordGroup" DesignTimeRectangle="722, 417, 766, 35" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Dacia Logan.'" FullSelectorArgument="&lt;webctrl tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='P' type='' class='' /&gt;" Guid="dc881e32-b962-4afc-a6fa-c2f59e5d11cd" ImageBase64="" InformativeScreenshot="be55707818b7324f654d45bf63721a67.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ChatGPT' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-              </uix:NGetText.Target>
-              <uix:NGetText.TextString>
-                <OutArgument x:TypeArguments="x:String">
-                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">carName</CSharpReference>
-                </OutArgument>
-              </uix:NGetText.TextString>
-            </uix:NGetText>
-            <Assign sap:VirtualizedContainerService.HintSize="433.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_5">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">
-                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">carName</CSharpReference>
-                </OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">carName.Remove(carName.Length - 1)</CSharpValue>
-                </InArgument>
-              </Assign.Value>
-            </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="433.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_3">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">
-                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">marca</CSharpReference>
-                </OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">carName.Split()[0]</CSharpValue>
-                </InArgument>
-              </Assign.Value>
-            </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="433.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_4">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">
-                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">model</CSharpReference>
-                </OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">carName.Split()[1]</CSharpValue>
-                </InArgument>
-              </Assign.Value>
-            </Assign>
-          </Sequence>
-        </ActivityAction>
-      </uix:NApplicationCard.Body>
-      <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAAdQAAAHUB48IHZQAABK5JREFUWEe9V1lTU0kU5s0/4/hL5o/4MA9ThTDO4lJqzdSU5UKNjpoAggOSsMuiiJqwyi7IEoEAYRFkRxK2bGfOd6Avfe9tUEvxVH2V9Hq+22frzvjx7M82ZBZ7zmT5cm+f83mHGTEGfSVi50q8Q4xb2f78H5z6rD8/1eec4sn3GClt8bdGionchS4bgX3lnqBhwcnA7w0oEkKAO/Hl5sknhEyf944QgM2547OO/VpNCbWND9P6Vowg8WSCwovzVPQ6QFmG+Z9AMrPEe5q/3pNjGHQhr7mBdhNxSqXTNLX8gTomQtQ3HabNnW0hM/x+mi5XF9GftT66UFFo3MOJLJ/nJo4f3m6coHDreSUlkklaiX6k241VtrHzZfk0sbQgJHSZW1uhh62NtrkucHRksC2ixkENOGZ8/V91fls/iE0eKI/yScA8tf2d1DI2RBvbW9LfMzVG2f482zoNmzgB04Agr+U5Dc1FKM0bYVPVf7mqiDon3lGazbHHxOrfdstJ6GvRfh0OCYlXoX7bmA4jgfOl+fRmekIWw+aQwrYXMobfnfiekOqZGqcrT4qtdTcaKmStagOjC7OUSCXpSvXhPB1GAt2To6K0PTxC/q5m+X8vUCdjg3wisG9OY7U1//rTMlY0J/NWY5tUcEAWuPuqVvoretusPh0uArArpDcyLm1sBtEJqM0uVD4S0yAcg+/e0uOOIIdoVOaPL76XE/mlNE/a8A+lQ4eLACbiyC5V/SdtE4GqvnYhsbW3K2OtY8OiCOO/su0bBnuFFMzXwb4CaR499CEdLgKza8s0u7pstU0EsPnix3XyND2j+4F6WthYs9pq3bWax+xHYfEVSFl3izWmw0Vgfn2VIiuLVttEAN6tvhjI9ueKKSAjnJD+ri+1rY9zDoHfmMLRRaB/ZlJiHkeJNjIgpJjTLdq6D+iAs0Y4Q+o+oSKisrdd9ijpDLrWuQgUcPaCIKGgDdawKeId0YHEcxSB0Pys/M/n/AEpbHspbRDZZn9ButbXAC4CADZKplLi1apPt2kXE9HjHeaAWRSBf148EQLq1AAQh5+otoKRABQrGZmfsdn0zssacVLUBeT6XDbR0uaGmO04AtMrS+Jfqq1gJBAIDcgGKiRxGrDpHwdVLoudTs2J7e6wh7dSKXv5UQQQ0tgDdUHpUDASgDIIyioKEOoBBAWnvKdVYhqO1jQ6aJVe3QecBFA3IP9yVlQ6FIwEfJ1NsgDOpPoeBJ/SB453SMhhFihEmDkJwFlVQeo2fD1gJHCRU+xeIiF1Hset+hERuuKrXIj6IvuOuc0FShUs+AUE1RKCOXre0GEkACDdQlDxfit/aBtDjng22CMkkW7xlSp1A8qEA5xTcHL6WieOvZAgx0NgeyipG+iS3+ju/jUMFxUUHH0NrmSICFPMm4ATOPZKhlDDHTCVTolSJTOrS667H65rCE+kXiexo5CBF4tpwAkkHlwqfi8vkMsoBNUQeQJejjQMi+/E4+wDh0XpU8jAc4n/fPFrCBEC5TAHYhzJqJnDEo5pmn8U9h8m/FwyDX4PHD7N+LlkmnDSEAKKBJ5L3Jl0TjpJWAQU8FzCiwWPhs95M3wdvPQ/jkK+9Hd0g/8AAAAASUVORK5CYII=" InformativeScreenshot="f5e2f9cfb7ee906ab59a98196389d060.jpg" Selector="&lt;html app='chrome.exe' title='ChatGPT' /&gt;" Title="ChatGPT" Url="https://chat.openai.com/" />
-      </uix:NApplicationCard.TargetApp>
-    </uix:NApplicationCard>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Autoturisme - Autovit.ro" sap:VirtualizedContainerService.HintSize="580.8,746.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="75c18d20-2cf3-4134-b0b7-c84deb3dffef" Version="V2">
-      <uix:NApplicationCard.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,529.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="75c18d20-2cf3-4134-b0b7-c84deb3dffef" Version="V3">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="https://www.autovit.ro/autoturisme" CvElementArea="408, 499, 478, 65" CvType="InputBox" DesignTimeRectangle="413, 501, 471, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl aria-label='Cauta modelul, versiunea sau altele' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Cauta modelul, versiunea sau altele' tag='INPUT' type='text' class='ehzuka42 ooa-1nszwb5' aaname='' /&gt;" Guid="721c0b3f-88f9-4183-8856-d37282ff978e" InformativeScreenshot="82ddd99024a0593879a08f67b75cbba7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Autoturisme - Autovit.ro' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                      <uix:Target CvElementArea="880, 500, 69, 64" CvType="Button" DesignTimeRectangle="883, 501, 65, 60" ElementType="Button" FriendlyName="'BUTTON'" FullSelectorArgument="&lt;webctrl aria-labelledby='Cauta modelul, versiunea sau altele' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-labelledby='Cauta modelul, versiunea sau altele' tag='BUTTON' type='button' class='ehzuka41 ep2wx1j0 ooa-1yh81o5' aaname='' /&gt;" SearchSteps="Selector" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NTypeInto.Target>
-              <uix:NTypeInto.Text>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">carName</CSharpValue>
-                </InArgument>
-              </uix:NTypeInto.Text>
-            </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="5" DelayBefore="1" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="75c18d20-2cf3-4134-b0b7-c84deb3dffef" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://www.autovit.ro/autoturisme" CvElementArea="880, 500, 69, 64" CvType="Button" DesignTimeRectangle="883, 501, 65, 60" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'BUTTON'" FullSelectorArgument="&lt;webctrl aria-labelledby='Cauta modelul, versiunea sau altele' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-labelledby='Cauta modelul, versiunea sau altele' tag='BUTTON' type='button' class='ehzuka41 ep2wx1j0 ooa-1yh81o5' aaname='' /&gt;" Guid="fe8198a2-d08f-43e8-bb90-3047e534a0ec" InformativeScreenshot="67359fd86890fb30c11bf848d0db91ff.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Autoturisme - Autovit.ro' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                      <uix:Target CvTextArea="35, 208, 213, 31" CvTextArgument="AUTOVIT.RO" CvType="Text" DesignTimeRectangle="39, 199, 210, 50" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' type='' class='logo' aaname='Logo' /&gt;" SearchSteps="FuzzySelector, CV" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NClick.Target>
-            </uix:NClick>
-          </Sequence>
-        </ActivityAction>
-      </uix:NApplicationCard.Body>
-      <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJoSURBVDhPhZNdSJNRGMePGTT3ZdveLZbu6907977TLoKgLiWvisqvpWtOIS8MKuiioIsuNoO5glCvuqsg6aqr6KK6tH2ZiV4UTVKjFDLBCGWjcnP/zjmtaLjmA3/Ow4H/73mew3MIC4O7MyBIgbBR9O8qQewKa8VgmDgGT3CzydUdMnuCMHtCVH1VZaGq9/RjrzSIqKd5e1XZd5IYRP+IuSkEk+gvk+A+C21jO3S2Dp4LYjf0Yg9qHKF8VPRmN1q0SMmmGGFtMXoZwO1HPTU6DoVgaw7C4Oik5l5q7suPSN7sB1m9Pd9spgBhuCKAVSR1rbg/8Ry37zyieRtqXaF8rGROyyYwQFoWIjsB1Ky2noJDOYdc7geWltegs3ZsRZ1S7qPy21wVIEg9IKpW3Iw9xJ94ceXyzxkDKU75BG7+P4BW1xw8jQZ6rn75WrIDxXdzSNh0SHn01QG8Op39RuQeN34ajWH92VOeZy70Y9JIkC51sRNAX17T0A6Lowsrn9e56e3QAFbujvJ8c3YacasKqab9lQH85TVtuBp+wA2VIjMUxEvzHqQVoRxgoZuotnfB4OwtLMy+2S6sr2F5/BYWr1/CwrWLWHs8gUJ2k47zBIlGNdK0i78Attt6zwBq7YGtcVnJvT9mL04ftiF+oIbPPGkgSNhVmD7ixOujEqZ81Og1csAUWySdszemks5jTJKyS3JdMeHSIOnUULqRt8rE5k461Ui6tHx+psUW1oEpSrTu/sCYV8FGiwYZesk0z0QrlOmf+wV6zijG70mv6Tj/kd+8tWdmfcIwm2k3vaKa8wmRuCy0EkLILyfT4cKRFIvbAAAAAElFTkSuQmCC" InformativeScreenshot="731a111bf58c9b4229f9b307752aae46.jpg" Selector="&lt;html app='chrome.exe' title='Autoturisme - Autovit.ro' /&gt;" Title="Autoturisme - Autovit.ro" Url="https://www.autovit.ro/autoturisme" />
-      </uix:NApplicationCard.TargetApp>
-    </uix:NApplicationCard>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="580.8,1632" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="545.6,1553.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Autoturisme - Autovit.ro" sap:VirtualizedContainerService.HintSize="483.2,1441.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="dcbf226e-8fe0-476b-963c-2cc6786adaed" Version="V2">
-            <uix:NApplicationCard.Body>
-              <ActivityAction x:TypeArguments="x:Object">
-                <ActivityAction.Argument>
-                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-                </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,1184.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="dcbf226e-8fe0-476b-963c-2cc6786adaed" Version="V3">
-                    <uix:NTypeInto.Target>
-                      <uix:TargetAnchorable BrowserURL="https://www.autovit.ro/autoturisme" CvElementArea="341, 334, 43, 35" CvTextArea="154, 343, 55, 17" CvTextArgument="Marca" CvType="ArrowButton" DesignTimeRectangle="135, 321, 258, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='ooa-3ed62e' aaname='' /&gt;" Guid="2707ab7e-27bf-442d-9bea-eabad48b58e4" InformativeScreenshot="f562f4c409abf77514af8d1b2e898ada.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Autoturisme - Autovit.ro' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
-                    </uix:NTypeInto.Target>
-                    <uix:NTypeInto.Text>
-                      <InArgument x:TypeArguments="x:String">
-                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">marca</CSharpValue>
-                      </InArgument>
-                    </uix:NTypeInto.Text>
-                  </uix:NTypeInto>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SVG'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dcbf226e-8fe0-476b-963c-2cc6786adaed" Version="V3">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="https://www.autovit.ro/autoturisme" CvElementArea="153, 389, 33, 33" CvType="CheckBox" DesignTimeRectangle="157, 391, 26, 30" DesignTimeScaleFactor="1.25" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;div&amp;gt;label&amp;gt;div&amp;gt;svg' parentid='__next' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='__next' tag='svg' class='ooa-1q6nlzs' aaname='' /&gt;" Guid="f407dac5-99b1-49ae-83bd-09812829dd26" InformativeScreenshot="4c3aa7735482fe87cfc0af00025675ca.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Autoturisme - Autovit.ro' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                            <uix:Target CvTextArea="35, 220, 213, 31" CvTextArgument="AUTOVIT.RO" CvType="Text" DesignTimeRectangle="39, 212, 210, 50" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' type='' class='logo' aaname='Logo' /&gt;" SearchSteps="FuzzySelector, CV" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NClick.Target>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="1" DisplayName="Click 'SVG'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dcbf226e-8fe0-476b-963c-2cc6786adaed" Version="V3">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="https://www.autovit.ro/autoturisme/audi/a4" CvElementArea="340, 332, 45, 37" CvType="ArrowButton" DesignTimeRectangle="348, 336, 30, 30" DesignTimeScaleFactor="1.25" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl parentid='__next' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='__next' tag='svg' type='' class='e1ilfzrf0 ooa-qwcuou er34gjf0' aaname='' /&gt;" Guid="6322879d-0b5a-4e69-b785-d109bf0cb6ac" InformativeScreenshot="c954457f25d7277d3694dbe09d1fce0a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Audi A4 - Autoturisme - Autovit.ro' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                            <uix:Target CvTextArea="35, 220, 213, 31" CvTextArgument="AUTOVIT.RO" CvType="Text" DesignTimeRectangle="39, 212, 210, 50" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' type='' class='logo' aaname='Logo' /&gt;" SearchSteps="FuzzySelector, CV" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NClick.Target>
-                  </uix:NClick>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="3" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="dcbf226e-8fe0-476b-963c-2cc6786adaed" Version="V3">
-                    <uix:NTypeInto.Target>
-                      <uix:TargetAnchorable BrowserURL="https://www.autovit.ro/autoturisme/dacia/1300" CvElementArea="619, 321, 43, 35" CvTextArea="433, 330, 56, 21" CvTextArgument="Model" CvType="ArrowButton" DesignTimeRectangle="413, 308, 258, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl aria-label='Model' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Model' tag='INPUT' type='text' class='ooa-3ed62e' aaname='' /&gt;" Guid="5b52fc0c-0c6d-459e-8656-91903593b9ea" InformativeScreenshot="09a66da1cfc2fc25139b6a726d0ec86b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Dacia 1300 - Autoturisme - Autovit.ro' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                            <uix:Target CvTextArea="35, 208, 213, 31" CvTextArgument="AUTOVIT.RO" CvType="Text" DesignTimeRectangle="39, 199, 210, 50" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' type='' class='logo' aaname='Logo' /&gt;" SearchSteps="FuzzySelector, CV" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NTypeInto.Target>
-                    <uix:NTypeInto.Text>
-                      <InArgument x:TypeArguments="x:String">
-                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">model</CSharpValue>
-                      </InArgument>
-                    </uix:NTypeInto.Text>
-                  </uix:NTypeInto>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="10" DelayBefore="3" DisplayName="Click 'SVG'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dcbf226e-8fe0-476b-963c-2cc6786adaed" Version="V3">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="https://www.autovit.ro/autoturisme/dacia/1300" CvElementArea="619, 321, 43, 35" CvType="ArrowButton" DesignTimeRectangle="626, 323, 30, 30" DesignTimeScaleFactor="1.25" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl idx='2' parentid='__next' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='__next' tag='svg' class='e1ilfzrf0 ooa-qwcuou er34gjf0' aaname='' /&gt;" Guid="09758487-1bd7-4645-b98c-549f1469dd39" InformativeScreenshot="6513ec5540d6d872875ef4781ef605bd.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Dacia 1300 - Autoturisme - Autovit.ro' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                            <uix:Target CvTextArea="35, 208, 213, 31" CvTextArgument="AUTOVIT.RO" CvType="Text" DesignTimeRectangle="39, 199, 210, 50" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' type='' class='logo' aaname='Logo' /&gt;" SearchSteps="FuzzySelector, CV" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NClick.Target>
-                  </uix:NClick>
-                </Sequence>
-              </ActivityAction>
-            </uix:NApplicationCard.Body>
-            <uix:NApplicationCard.TargetApp>
-              <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJoSURBVDhPhZNdSJNRGMePGTT3ZdveLZbu6907977TLoKgLiWvisqvpWtOIS8MKuiioIsuNoO5glCvuqsg6aqr6KK6tH2ZiV4UTVKjFDLBCGWjcnP/zjmtaLjmA3/Ow4H/73mew3MIC4O7MyBIgbBR9O8qQewKa8VgmDgGT3CzydUdMnuCMHtCVH1VZaGq9/RjrzSIqKd5e1XZd5IYRP+IuSkEk+gvk+A+C21jO3S2Dp4LYjf0Yg9qHKF8VPRmN1q0SMmmGGFtMXoZwO1HPTU6DoVgaw7C4Oik5l5q7suPSN7sB1m9Pd9spgBhuCKAVSR1rbg/8Ry37zyieRtqXaF8rGROyyYwQFoWIjsB1Ky2noJDOYdc7geWltegs3ZsRZ1S7qPy21wVIEg9IKpW3Iw9xJ94ceXyzxkDKU75BG7+P4BW1xw8jQZ6rn75WrIDxXdzSNh0SHn01QG8Op39RuQeN34ajWH92VOeZy70Y9JIkC51sRNAX17T0A6Lowsrn9e56e3QAFbujvJ8c3YacasKqab9lQH85TVtuBp+wA2VIjMUxEvzHqQVoRxgoZuotnfB4OwtLMy+2S6sr2F5/BYWr1/CwrWLWHs8gUJ2k47zBIlGNdK0i78Attt6zwBq7YGtcVnJvT9mL04ftiF+oIbPPGkgSNhVmD7ixOujEqZ81Og1csAUWySdszemks5jTJKyS3JdMeHSIOnUULqRt8rE5k461Ui6tHx+psUW1oEpSrTu/sCYV8FGiwYZesk0z0QrlOmf+wV6zijG70mv6Tj/kd+8tWdmfcIwm2k3vaKa8wmRuCy0EkLILyfT4cKRFIvbAAAAAElFTkSuQmCC" InformativeScreenshot="23d01a317d78e0f479ef6136517209b6.jpg" Selector="&lt;html app='chrome.exe' title='Autoturisme - Autovit.ro' /&gt;" Title="Autoturisme - Autovit.ro" Url="https://www.autovit.ro/autoturisme" />
-            </uix:NApplicationCard.TargetApp>
-          </uix:NApplicationCard>
-        </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ExtractDataAndWriteInExcel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ExtractDataAndWriteInExcel.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="carName">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">carName</CSharpValue>
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>
