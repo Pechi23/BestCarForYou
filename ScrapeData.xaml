@@ -4,7 +4,7 @@
     <x:Property Name="sheetTables" Type="OutArgument(scg:Dictionary(x:String, sd:DataTable))" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>837.6,4165.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>837.6,4167.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -119,7 +119,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ScrapeCarsDataFromOlx" sap:VirtualizedContainerService.HintSize="689.6,4100.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+  <Sequence DisplayName="ScrapeCarsDataFromOlx" sap:VirtualizedContainerService.HintSize="689.6,4102.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="allCars" />
       <Variable x:TypeArguments="x:String" Name="searchUrl" />
@@ -153,13 +153,13 @@
         </InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="627.2,692.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="53410da9-3677-466e-a017-1f98418cbe1f" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="627.2,694.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="53410da9-3677-466e-a017-1f98418cbe1f" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="449.6,476" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <Sequence sap:VirtualizedContainerService.HintSize="449.6,477.6" sap2010:WorkflowViewState.IdRef="Sequence_19">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -184,7 +184,7 @@
                 <uix:TargetAnchorable BrowserURL="https://www.olx.ro/auto-masini-moto-ambarcatiuni/autoturisme/q-/?currency=EUR" DesignTimeRectangle="205, 669, 1508, 11570" DesignTimeScaleFactor="1.25" FriendlyName="'PROMOVATFord Transit'" FullSelectorArgument="&lt;webctrl class='css-oukcj3' parentid='mainContent' tag='DIV' /&gt;" Guid="9c429527-0686-462e-a509-927398e8b30b" InformativeScreenshot="fd487436bbe78a3470351cecbac426bb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Autoturisme second hand si noi de vanzare &amp;apos; Anunturi &amp;apos; OLX.ro' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NExtractData.Target>
             </uix:NExtractData>
-            <ui:InvokeCode ContinueOnError="{x:Null}" Code=" sheetTables = new System.Collections.Generic.Dictionary&lt;string,System.Data.DataTable&gt;();&#xA; &#xA; foreach(DataRow row in allCars.Rows)&#xA;{&#xA;&#x9;//parsing data by splitting instead of using Regex &#xA;&#x9;row[&quot;price&quot;] = int.Parse(string.Join(&quot;&quot;,row[&quot;price&quot;].ToString().Split('€')[0].Split(',')[0].Split(' ')));&#xA;    row[&quot;year&quot;] = row[&quot;year&quot;].ToString().Split(' ')[0];&#xA;&#x9;string key = row[&quot;year&quot;].ToString();&#xA;&#x9;&#xA;&#x9;//if data doesn't have a year of production, it isn't a car, so we skip it&#xA;&#x9;if(key == &quot;&quot;)&#xA;&#x9;&#x9;continue;&#xA;&#x9;&#xA;&#x9;//create sheet table if doesn't exist&#xA;&#x9;if(!sheetTables.ContainsKey(key))&#xA;&#x9;{&#xA;&#x9;&#x9;DataTable dt = new DataTable(); &#xA;&#x9;&#x9;dt.Columns.Add(&quot;name&quot;);&#xA;&#x9;&#x9;dt.Columns.Add(&quot;price&quot;);&#xA;&#x9;&#x9;dt.Columns.Add(&quot;year&quot;);&#xA;&#x9;&#x9;sheetTables[key] = dt;&#xA;&#x9;}&#xA;&#x9;//add car to table by year&#xA;&#x9;sheetTables[key].ImportRow(row);&#xA;} &#xA;&#xA;//sort sheetTables by price ascending&#xA;foreach(var entry in sheetTables)&#xA;{&#xA;&#x9;var dt = entry.Value;&#xA;&#x9;sheetTables[entry.Key] = dt.AsEnumerable().OrderBy(r =&gt; r[&quot;price&quot;]).CopyToDataTable();&#xA;} &#xA;// name, price, year&#xA;" DisplayName="ParseExtractedData" sap:VirtualizedContainerService.HintSize="387.2,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+            <ui:InvokeCode ContinueOnError="{x:Null}" Code=" sheetTables = new System.Collections.Generic.Dictionary&lt;string,System.Data.DataTable&gt;();&#xD;&#xA; &#xD;&#xA; foreach(DataRow row in allCars.Rows)&#xD;&#xA;{&#xD;&#xA;&#x9;//parsing data by splitting instead of using Regex&#xD;&#xA;&#x9;row[&quot;price&quot;] = int.Parse(string.Join(&quot;&quot;,row[&quot;price&quot;].ToString().Split('€')[0].Split(',')[0].Split(' ')));&#xD;&#xA;    row[&quot;year&quot;] = row[&quot;year&quot;].ToString().Split(' ')[0];&#xD;&#xA;&#x9;string key = row[&quot;year&quot;].ToString();&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;//if data doesn't have a year of production, it isn't a car, so we skip it&#xD;&#xA;&#x9;if(key == &quot;&quot;)&#xD;&#xA;&#x9;&#x9;continue;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;//create sheet table if doesn't exist&#xD;&#xA;&#x9;if(!sheetTables.ContainsKey(key))&#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;DataTable dt = new DataTable(); &#xD;&#xA;&#x9;&#x9;dt.Columns.Add(&quot;name&quot;);&#xD;&#xA;&#x9;&#x9;dt.Columns.Add(&quot;price&quot;);&#xD;&#xA;&#x9;&#x9;dt.Columns.Add(&quot;year&quot;);&#xD;&#xA;&#x9;&#x9;sheetTables[key] = dt;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;//add car to table by year&#xD;&#xA;&#x9;sheetTables[key].ImportRow(row);&#xD;&#xA;} &#xD;&#xA;&#xD;&#xA;//sort sheetTables by price ascending&#xD;&#xA;foreach(var entry in sheetTables)&#xD;&#xA;{&#xD;&#xA;&#x9;var dt = entry.Value;&#xD;&#xA;&#x9;sheetTables[entry.Key] = dt.AsEnumerable().OrderBy(r =&gt; int.Parse(r[&quot;price&quot;].ToString())).CopyToDataTable();&#xD;&#xA;}&#xD;&#xA;// name, price, year&#xD;&#xA;" DisplayName="ParseExtractedData" sap:VirtualizedContainerService.HintSize="387.2,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
               <ui:InvokeCode.Arguments>
                 <InOutArgument x:TypeArguments="sd:DataTable" x:Key="allCars">
                   <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">allCars</CSharpReference>
