@@ -1,0 +1,411 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="WriteToExcel" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="carName" Type="InArgument(x:String)" />
+    <x:Property Name="sheetTables" Type="OutArgument(scg:Dictionary(x:String, sd:DataTable))" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>837.6,4165.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph.Core</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ScrapeCarsDataFromOlx" sap:VirtualizedContainerService.HintSize="689.6,4100.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="allCars" />
+      <Variable x:TypeArguments="x:String" Name="searchUrl" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign DisplayName="Slugify carName to use it in an valid url" sap:VirtualizedContainerService.HintSize="627.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_31">carName</CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">string.Join('-',carName.Split())</CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="627.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_33">searchUrl</CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">"https://www.olx.ro/auto-masini-moto-ambarcatiuni/autoturisme/q-" +carName.ToString() +"/?currency=EUR"</CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="627.2,692.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="53410da9-3677-466e-a017-1f98418cbe1f" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="449.6,476" sap2010:WorkflowViewState.IdRef="Sequence_19">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DisplayName="Extract Cars from browser as Table" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='name'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='price'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='year' Sort='Desc'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='h6' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='p' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="Rows" MaximumResults="100" Version="V3">
+              <uix:NExtractData.DataTable>
+                <InOutArgument x:TypeArguments="sd:DataTable">
+                  <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">allCars</CSharpReference>
+                </InOutArgument>
+              </uix:NExtractData.DataTable>
+              <uix:NExtractData.NextLink>
+                <uix:TargetAnchorable BrowserURL="https://www.olx.ro/oferte/q-dacia-logan./?page=2" CvElementArea="1080, 717, 28, 38" CvType="ArrowButton" DesignTimeRectangle="1079, 720, 30, 30" DesignTimeScaleFactor="1.25" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;ul&amp;gt;a&amp;gt;svg' idx='2' parentid='mainContent' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='css-pyu9k9' parentid='mainContent' tag='svg' aaname='' /&gt;" Guid="6662ab6b-5732-44c7-a9a8-fafc774fd12d" ScopeSelectorArgument="&lt;html app='chrome.exe' title='dacia logan. de vanzare &amp;apos; Anunturi &amp;apos; OLX.ro - Pagina 2' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvElementArea="808, 717, 30, 38" CvType="ArrowButton" DesignTimeRectangle="816, 722, 14, 25" ElementType="Icon" FriendlyName="'PATH'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;ul&amp;gt;a&amp;gt;svg&amp;gt;path' parentid='mainContent' tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='mainContent' tag='path' class='' aaname='' /&gt;" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NExtractData.NextLink>
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.olx.ro/auto-masini-moto-ambarcatiuni/autoturisme/q-/?currency=EUR" DesignTimeRectangle="205, 669, 1508, 11570" DesignTimeScaleFactor="1.25" FriendlyName="'PROMOVATFord Transit'" FullSelectorArgument="&lt;webctrl class='css-oukcj3' parentid='mainContent' tag='DIV' /&gt;" Guid="9c429527-0686-462e-a509-927398e8b30b" InformativeScreenshot="fd487436bbe78a3470351cecbac426bb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Autoturisme second hand si noi de vanzare &amp;apos; Anunturi &amp;apos; OLX.ro' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NExtractData.Target>
+            </uix:NExtractData>
+            <ui:InvokeCode ContinueOnError="{x:Null}" Code=" sheetTables = new System.Collections.Generic.Dictionary&lt;string,System.Data.DataTable&gt;();&#xD;&#xA; &#xD;&#xA; foreach(DataRow row in allCars.Rows)&#xD;&#xA;{&#xD;&#xA;&#x9;//parsing data by splitting instead of using Regex &#xD;&#xA;&#x9;row[&quot;price&quot;] = int.Parse(string.Join(&quot;&quot;,row[&quot;price&quot;].ToString().Split('€')[0].Split(',')[0].Split(' ')));&#xD;&#xA;    row[&quot;year&quot;] = row[&quot;year&quot;].ToString().Split(' ')[0];&#xD;&#xA;&#x9;string key = row[&quot;year&quot;].ToString();&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;//if data doesn't have a year of production, it isn't a car, so we skip it&#xD;&#xA;&#x9;if(key == &quot;&quot;)&#xD;&#xA;&#x9;&#x9;continue;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;//create sheet table if doesn't exist&#xD;&#xA;&#x9;if(!sheetTables.ContainsKey(key))&#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;DataTable dt = new DataTable(); &#xD;&#xA;&#x9;&#x9;dt.Columns.Add(&quot;name&quot;);&#xD;&#xA;&#x9;&#x9;dt.Columns.Add(&quot;price&quot;);&#xD;&#xA;&#x9;&#x9;dt.Columns.Add(&quot;year&quot;);&#xD;&#xA;&#x9;&#x9;sheetTables[key] = dt;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;//add car to table by year&#xD;&#xA;&#x9;sheetTables[key].ImportRow(row);&#xD;&#xA;} &#xD;&#xA;&#xD;&#xA;//sort sheetTables by price ascending&#xD;&#xA;foreach(var entry in sheetTables)&#xD;&#xA;{&#xD;&#xA;&#x9;var dt = entry.Value;&#xD;&#xA;&#x9;sheetTables[entry.Key] = dt.AsEnumerable().OrderBy(r =&gt; r[&quot;price&quot;]).CopyToDataTable();&#xD;&#xA;} &#xD;&#xA;// name, price, year&#xD;&#xA;" DisplayName="ParseExtractedData" sap:VirtualizedContainerService.HintSize="387.2,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+              <ui:InvokeCode.Arguments>
+                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="allCars">
+                  <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">allCars</CSharpReference>
+                </InOutArgument>
+                <InOutArgument x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)" x:Key="sheetTables">
+                  <CSharpReference x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">sheetTables</CSharpReference>
+                </InOutArgument>
+              </ui:InvokeCode.Arguments>
+            </ui:InvokeCode>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="ae2d38ecc178990dcf72fcf274001463.jpg" Selector="&lt;html app='chrome.exe' title='dacia logan. de vanzare &amp;apos; Anunturi &amp;apos; OLX.ro' /&gt;" Title="dacia logan. de vanzare ' Anunturi ' OLX.ro">
+          <uix:TargetApp.Url>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46">searchUrl</CSharpValue>
+            </InArgument>
+          </uix:TargetApp.Url>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="627.2,1136" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="545.6,1057.6" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Autoturisme - Autovit.ro" sap:VirtualizedContainerService.HintSize="483.2,945.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InteractionMode="DebuggerApi" ScopeGuid="75c18d20-2cf3-4134-b0b7-c84deb3dffef" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,728.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="sd:DataTable" Name="ExtractDataTable">
+                      <Variable.Default>
+                        <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">new System.Data.DataTable();</CSharpValue>
+                      </Variable.Default>
+                    </Variable>
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="75c18d20-2cf3-4134-b0b7-c84deb3dffef" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.autovit.ro/autoturisme" CvElementArea="408, 499, 478, 65" CvType="InputBox" DesignTimeRectangle="413, 501, 471, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl aria-label='Cauta modelul, versiunea sau altele' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Cauta modelul, versiunea sau altele' tag='INPUT' type='text' class='ehzuka42 ooa-1nszwb5' aaname='' /&gt;" Guid="721c0b3f-88f9-4183-8856-d37282ff978e" InformativeScreenshot="82ddd99024a0593879a08f67b75cbba7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Autoturisme - Autovit.ro' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvElementArea="880, 500, 69, 64" CvType="Button" DesignTimeRectangle="883, 501, 65, 60" ElementType="Button" FriendlyName="'BUTTON'" FullSelectorArgument="&lt;webctrl aria-labelledby='Cauta modelul, versiunea sau altele' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-labelledby='Cauta modelul, versiunea sau altele' tag='BUTTON' type='button' class='ehzuka41 ep2wx1j0 ooa-1yh81o5' aaname='' /&gt;" SearchSteps="Selector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">carName</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.Text>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="5" DelayBefore="1" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="75c18d20-2cf3-4134-b0b7-c84deb3dffef" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.autovit.ro/autoturisme" CvElementArea="880, 500, 69, 64" CvType="Button" DesignTimeRectangle="883, 501, 65, 60" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'BUTTON'" FullSelectorArgument="&lt;webctrl aria-labelledby='Cauta modelul, versiunea sau altele' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-labelledby='Cauta modelul, versiunea sau altele' tag='BUTTON' type='button' class='ehzuka41 ep2wx1j0 ooa-1yh81o5' aaname='' /&gt;" Guid="fe8198a2-d08f-43e8-bb90-3047e534a0ec" InformativeScreenshot="67359fd86890fb30c11bf848d0db91ff.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Autoturisme - Autovit.ro' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="35, 208, 213, 31" CvTextArgument="AUTOVIT.RO" CvType="Text" DesignTimeRectangle="39, 199, 210, 50" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' type='' class='logo' aaname='Logo' /&gt;" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NExtractData AppendResults="False" ContinueOnError="True" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='name' ReferenceName='Column0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='New column 1' ReferenceName='Column2'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='article' idx='1' /&gt;&lt;webctrl tag='section' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='article' idx='1' /&gt;&lt;webctrl tag='section' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='h1' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='article' idx='1' /&gt;&lt;webctrl tag='section' idx='1' /&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='p' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NExtractData_3" LimitExtractionTo="Rows" MaximumResults="100" ScopeIdentifier="75c18d20-2cf3-4134-b0b7-c84deb3dffef" Version="V3">
+                    <uix:NExtractData.DataTable>
+                      <InOutArgument x:TypeArguments="sd:DataTable">
+                        <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_28">ExtractDataTable</CSharpReference>
+                      </InOutArgument>
+                    </uix:NExtractData.DataTable>
+                    <uix:NExtractData.NextLink>
+                      <uix:TargetAnchorable BrowserURL="https://www.autovit.ro/autoturisme/q-dacia-logan" CvElementArea="984, 580, 30, 37" CvType="ArrowButton" DesignTimeRectangle="984, 582, 30, 30" DesignTimeScaleFactor="1.25" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;svg' idx='2' parentid='__next' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='ooa-1xwoou1' parentid='__next' tag='svg' aaname='' /&gt;" Guid="dfa4b27e-be09-4d7b-82a7-aa60a7427686" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Autoturisme - Autovit.ro' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                    </uix:NExtractData.NextLink>
+                    <uix:NExtractData.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="9, -9, 1899, 14695" DesignTimeScaleFactor="1.25" FriendlyName="'Prima paginaAutoturisme…'" FullSelectorArgument="&lt;webctrl tag='MAIN' /&gt;" Guid="2d2215b6-6f20-4725-ac5a-15df376bea38" InformativeScreenshot="d08431367e3b5c0eba668a92ef060f59.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Autoturisme - Autovit.ro' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NExtractData.Target>
+                  </uix:NExtractData>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJoSURBVDhPhZNdSJNRGMePGTT3ZdveLZbu6907977TLoKgLiWvisqvpWtOIS8MKuiioIsuNoO5glCvuqsg6aqr6KK6tH2ZiV4UTVKjFDLBCGWjcnP/zjmtaLjmA3/Ow4H/73mew3MIC4O7MyBIgbBR9O8qQewKa8VgmDgGT3CzydUdMnuCMHtCVH1VZaGq9/RjrzSIqKd5e1XZd5IYRP+IuSkEk+gvk+A+C21jO3S2Dp4LYjf0Yg9qHKF8VPRmN1q0SMmmGGFtMXoZwO1HPTU6DoVgaw7C4Oik5l5q7suPSN7sB1m9Pd9spgBhuCKAVSR1rbg/8Ry37zyieRtqXaF8rGROyyYwQFoWIjsB1Ky2noJDOYdc7geWltegs3ZsRZ1S7qPy21wVIEg9IKpW3Iw9xJ94ceXyzxkDKU75BG7+P4BW1xw8jQZ6rn75WrIDxXdzSNh0SHn01QG8Op39RuQeN34ajWH92VOeZy70Y9JIkC51sRNAX17T0A6Lowsrn9e56e3QAFbujvJ8c3YacasKqab9lQH85TVtuBp+wA2VIjMUxEvzHqQVoRxgoZuotnfB4OwtLMy+2S6sr2F5/BYWr1/CwrWLWHs8gUJ2k47zBIlGNdK0i78Attt6zwBq7YGtcVnJvT9mL04ftiF+oIbPPGkgSNhVmD7ixOujEqZ81Og1csAUWySdszemks5jTJKyS3JdMeHSIOnUULqRt8rE5k461Ui6tHx+psUW1oEpSrTu/sCYV8FGiwYZesk0z0QrlOmf+wV6zijG70mv6Tj/kd+8tWdmfcIwm2k3vaKa8wmRuCy0EkLILyfT4cKRFIvbAAAAAElFTkSuQmCC" InformativeScreenshot="731a111bf58c9b4229f9b307752aae46.jpg" Selector="&lt;html app='chrome.exe' title='Autoturisme - Autovit.ro' /&gt;" Title="Autoturisme - Autovit.ro" Url="https://www.autovit.ro/autoturisme" />
+            </uix:NApplicationCard.TargetApp>
+          </uix:NApplicationCard>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="627.2,1836.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="592,1758.4" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Autoturisme - Autovit.ro" sap:VirtualizedContainerService.HintSize="529.6,1646.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" InteractionMode="DebuggerApi" ScopeGuid="dcbf226e-8fe0-476b-963c-2cc6786adaed" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,1429.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="433.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_4">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_29">marca</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">carName.Split()[0]</CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="433.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_30">model</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">carName.Split()[1]</CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="dcbf226e-8fe0-476b-963c-2cc6786adaed" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.autovit.ro/autoturisme" CvElementArea="341, 334, 43, 35" CvTextArea="154, 343, 55, 17" CvTextArgument="Marca" CvType="ArrowButton" DesignTimeRectangle="135, 321, 258, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='ooa-3ed62e' aaname='' /&gt;" Guid="2707ab7e-27bf-442d-9bea-eabad48b58e4" InformativeScreenshot="f562f4c409abf77514af8d1b2e898ada.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Autoturisme - Autovit.ro' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">marca</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.Text>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SVG'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dcbf226e-8fe0-476b-963c-2cc6786adaed" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.autovit.ro/autoturisme" CvElementArea="153, 389, 33, 33" CvType="CheckBox" DesignTimeRectangle="157, 391, 26, 30" DesignTimeScaleFactor="1.25" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;div&amp;gt;label&amp;gt;div&amp;gt;svg' parentid='__next' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='__next' tag='svg' class='ooa-1q6nlzs' aaname='' /&gt;" Guid="f407dac5-99b1-49ae-83bd-09812829dd26" InformativeScreenshot="4c3aa7735482fe87cfc0af00025675ca.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Autoturisme - Autovit.ro' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="35, 220, 213, 31" CvTextArgument="AUTOVIT.RO" CvType="Text" DesignTimeRectangle="39, 212, 210, 50" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' type='' class='logo' aaname='Logo' /&gt;" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="1" DisplayName="Click 'SVG'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dcbf226e-8fe0-476b-963c-2cc6786adaed" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.autovit.ro/autoturisme/audi/a4" CvElementArea="340, 332, 45, 37" CvType="ArrowButton" DesignTimeRectangle="348, 336, 30, 30" DesignTimeScaleFactor="1.25" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl parentid='__next' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='__next' tag='svg' type='' class='e1ilfzrf0 ooa-qwcuou er34gjf0' aaname='' /&gt;" Guid="6322879d-0b5a-4e69-b785-d109bf0cb6ac" InformativeScreenshot="c954457f25d7277d3694dbe09d1fce0a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Audi A4 - Autoturisme - Autovit.ro' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="35, 220, 213, 31" CvTextArgument="AUTOVIT.RO" CvType="Text" DesignTimeRectangle="39, 212, 210, 50" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' type='' class='logo' aaname='Logo' /&gt;" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="3" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="dcbf226e-8fe0-476b-963c-2cc6786adaed" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.autovit.ro/autoturisme/dacia/1300" CvElementArea="619, 321, 43, 35" CvTextArea="433, 330, 56, 21" CvTextArgument="Model" CvType="ArrowButton" DesignTimeRectangle="413, 308, 258, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl aria-label='Model' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Model' tag='INPUT' type='text' class='ooa-3ed62e' aaname='' /&gt;" Guid="5b52fc0c-0c6d-459e-8656-91903593b9ea" InformativeScreenshot="09a66da1cfc2fc25139b6a726d0ec86b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Dacia 1300 - Autoturisme - Autovit.ro' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="35, 208, 213, 31" CvTextArgument="AUTOVIT.RO" CvType="Text" DesignTimeRectangle="39, 199, 210, 50" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' type='' class='logo' aaname='Logo' /&gt;" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">model</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.Text>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="1" DelayBefore="3" DisplayName="Click 'SVG'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dcbf226e-8fe0-476b-963c-2cc6786adaed" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.autovit.ro/autoturisme/dacia/1300" CvElementArea="619, 321, 43, 35" CvType="ArrowButton" DesignTimeRectangle="626, 323, 30, 30" DesignTimeScaleFactor="1.25" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl idx='2' parentid='__next' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='__next' tag='svg' class='e1ilfzrf0 ooa-qwcuou er34gjf0' aaname='' /&gt;" Guid="09758487-1bd7-4645-b98c-549f1469dd39" InformativeScreenshot="6513ec5540d6d872875ef4781ef605bd.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Dacia 1300 - Autoturisme - Autovit.ro' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="35, 208, 213, 31" CvTextArgument="AUTOVIT.RO" CvType="Text" DesignTimeRectangle="39, 199, 210, 50" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' type='' class='logo' aaname='Logo' /&gt;" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJoSURBVDhPhZNdSJNRGMePGTT3ZdveLZbu6907977TLoKgLiWvisqvpWtOIS8MKuiioIsuNoO5glCvuqsg6aqr6KK6tH2ZiV4UTVKjFDLBCGWjcnP/zjmtaLjmA3/Ow4H/73mew3MIC4O7MyBIgbBR9O8qQewKa8VgmDgGT3CzydUdMnuCMHtCVH1VZaGq9/RjrzSIqKd5e1XZd5IYRP+IuSkEk+gvk+A+C21jO3S2Dp4LYjf0Yg9qHKF8VPRmN1q0SMmmGGFtMXoZwO1HPTU6DoVgaw7C4Oik5l5q7suPSN7sB1m9Pd9spgBhuCKAVSR1rbg/8Ry37zyieRtqXaF8rGROyyYwQFoWIjsB1Ky2noJDOYdc7geWltegs3ZsRZ1S7qPy21wVIEg9IKpW3Iw9xJ94ceXyzxkDKU75BG7+P4BW1xw8jQZ6rn75WrIDxXdzSNh0SHn01QG8Op39RuQeN34ajWH92VOeZy70Y9JIkC51sRNAX17T0A6Lowsrn9e56e3QAFbujvJ8c3YacasKqab9lQH85TVtuBp+wA2VIjMUxEvzHqQVoRxgoZuotnfB4OwtLMy+2S6sr2F5/BYWr1/CwrWLWHs8gUJ2k47zBIlGNdK0i78Attt6zwBq7YGtcVnJvT9mL04ftiF+oIbPPGkgSNhVmD7ixOujEqZ81Og1csAUWySdszemks5jTJKyS3JdMeHSIOnUULqRt8rE5k461Ui6tHx+psUW1oEpSrTu/sCYV8FGiwYZesk0z0QrlOmf+wV6zijG70mv6Tj/kd+8tWdmfcIwm2k3vaKa8wmRuCy0EkLILyfT4cKRFIvbAAAAAElFTkSuQmCC" InformativeScreenshot="23d01a317d78e0f479ef6136517209b6.jpg" Selector="&lt;html app='chrome.exe' title='Autoturisme - Autovit.ro' /&gt;" Title="Autoturisme - Autovit.ro" Url="https://www.autovit.ro/autoturisme" />
+            </uix:NApplicationCard.TargetApp>
+          </uix:NApplicationCard>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+  </Sequence>
+</Activity>
