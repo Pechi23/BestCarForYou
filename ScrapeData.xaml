@@ -51,82 +51,72 @@
     <sco:Collection x:TypeArguments="AssemblyReference">
       <AssemblyReference>Microsoft.CSharp</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>PresentationCore</AssemblyReference>
       <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>System.Data.Common</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
       <AssemblyReference>System.Drawing</AssemblyReference>
       <AssemblyReference>System.Drawing.Common</AssemblyReference>
       <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
       <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Net.Mail</AssemblyReference>
       <AssemblyReference>System.ObjectModel</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>System.Xml</AssemblyReference>
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-      <AssemblyReference>WindowsBase</AssemblyReference>
-      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
-      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
-      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
-      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
-      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
-      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
-      <AssemblyReference>UiPath.Workflow</AssemblyReference>
-      <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Memory.Data</AssemblyReference>
-      <AssemblyReference>System.Console</AssemblyReference>
-      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
-      <AssemblyReference>System.Security.Permissions</AssemblyReference>
-      <AssemblyReference>System.ComponentModel</AssemblyReference>
-      <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Private.Uri</AssemblyReference>
-      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
-      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
-      <AssemblyReference>System.Private.Xml</AssemblyReference>
-      <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
-      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
-      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
-      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.GSuite</AssemblyReference>
-      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
-      <AssemblyReference>netstandard</AssemblyReference>
-      <AssemblyReference>Microsoft.Graph</AssemblyReference>
-      <AssemblyReference>Microsoft.Graph.Core</AssemblyReference>
-      <AssemblyReference>System.Linq.Async</AssemblyReference>
-      <AssemblyReference>System.Collections</AssemblyReference>
-      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
-      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
-      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
-      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
-      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="ScrapeCarsDataFromOlx" sap:VirtualizedContainerService.HintSize="689.6,4100.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
@@ -194,7 +184,7 @@
                 <uix:TargetAnchorable BrowserURL="https://www.olx.ro/auto-masini-moto-ambarcatiuni/autoturisme/q-/?currency=EUR" DesignTimeRectangle="205, 669, 1508, 11570" DesignTimeScaleFactor="1.25" FriendlyName="'PROMOVATFord Transit'" FullSelectorArgument="&lt;webctrl class='css-oukcj3' parentid='mainContent' tag='DIV' /&gt;" Guid="9c429527-0686-462e-a509-927398e8b30b" InformativeScreenshot="fd487436bbe78a3470351cecbac426bb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Autoturisme second hand si noi de vanzare &amp;apos; Anunturi &amp;apos; OLX.ro' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NExtractData.Target>
             </uix:NExtractData>
-            <ui:InvokeCode ContinueOnError="{x:Null}" Code=" sheetTables = new System.Collections.Generic.Dictionary&lt;string,System.Data.DataTable&gt;();&#xD;&#xA; &#xD;&#xA; foreach(DataRow row in allCars.Rows)&#xD;&#xA;{&#xD;&#xA;&#x9;//parsing data by splitting instead of using Regex &#xD;&#xA;&#x9;row[&quot;price&quot;] = int.Parse(string.Join(&quot;&quot;,row[&quot;price&quot;].ToString().Split('€')[0].Split(',')[0].Split(' ')));&#xD;&#xA;    row[&quot;year&quot;] = row[&quot;year&quot;].ToString().Split(' ')[0];&#xD;&#xA;&#x9;string key = row[&quot;year&quot;].ToString();&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;//if data doesn't have a year of production, it isn't a car, so we skip it&#xD;&#xA;&#x9;if(key == &quot;&quot;)&#xD;&#xA;&#x9;&#x9;continue;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;//create sheet table if doesn't exist&#xD;&#xA;&#x9;if(!sheetTables.ContainsKey(key))&#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;DataTable dt = new DataTable(); &#xD;&#xA;&#x9;&#x9;dt.Columns.Add(&quot;name&quot;);&#xD;&#xA;&#x9;&#x9;dt.Columns.Add(&quot;price&quot;);&#xD;&#xA;&#x9;&#x9;dt.Columns.Add(&quot;year&quot;);&#xD;&#xA;&#x9;&#x9;sheetTables[key] = dt;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;//add car to table by year&#xD;&#xA;&#x9;sheetTables[key].ImportRow(row);&#xD;&#xA;} &#xD;&#xA;&#xD;&#xA;//sort sheetTables by price ascending&#xD;&#xA;foreach(var entry in sheetTables)&#xD;&#xA;{&#xD;&#xA;&#x9;var dt = entry.Value;&#xD;&#xA;&#x9;sheetTables[entry.Key] = dt.AsEnumerable().OrderBy(r =&gt; r[&quot;price&quot;]).CopyToDataTable();&#xD;&#xA;} &#xD;&#xA;// name, price, year&#xD;&#xA;" DisplayName="ParseExtractedData" sap:VirtualizedContainerService.HintSize="387.2,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+            <ui:InvokeCode ContinueOnError="{x:Null}" Code=" sheetTables = new System.Collections.Generic.Dictionary&lt;string,System.Data.DataTable&gt;();&#xA; &#xA; foreach(DataRow row in allCars.Rows)&#xA;{&#xA;&#x9;//parsing data by splitting instead of using Regex &#xA;&#x9;row[&quot;price&quot;] = int.Parse(string.Join(&quot;&quot;,row[&quot;price&quot;].ToString().Split('€')[0].Split(',')[0].Split(' ')));&#xA;    row[&quot;year&quot;] = row[&quot;year&quot;].ToString().Split(' ')[0];&#xA;&#x9;string key = row[&quot;year&quot;].ToString();&#xA;&#x9;&#xA;&#x9;//if data doesn't have a year of production, it isn't a car, so we skip it&#xA;&#x9;if(key == &quot;&quot;)&#xA;&#x9;&#x9;continue;&#xA;&#x9;&#xA;&#x9;//create sheet table if doesn't exist&#xA;&#x9;if(!sheetTables.ContainsKey(key))&#xA;&#x9;{&#xA;&#x9;&#x9;DataTable dt = new DataTable(); &#xA;&#x9;&#x9;dt.Columns.Add(&quot;name&quot;);&#xA;&#x9;&#x9;dt.Columns.Add(&quot;price&quot;);&#xA;&#x9;&#x9;dt.Columns.Add(&quot;year&quot;);&#xA;&#x9;&#x9;sheetTables[key] = dt;&#xA;&#x9;}&#xA;&#x9;//add car to table by year&#xA;&#x9;sheetTables[key].ImportRow(row);&#xA;} &#xA;&#xA;//sort sheetTables by price ascending&#xA;foreach(var entry in sheetTables)&#xA;{&#xA;&#x9;var dt = entry.Value;&#xA;&#x9;sheetTables[entry.Key] = dt.AsEnumerable().OrderBy(r =&gt; r[&quot;price&quot;]).CopyToDataTable();&#xA;} &#xA;// name, price, year&#xA;" DisplayName="ParseExtractedData" sap:VirtualizedContainerService.HintSize="387.2,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
               <ui:InvokeCode.Arguments>
                 <InOutArgument x:TypeArguments="sd:DataTable" x:Key="allCars">
                   <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">allCars</CSharpReference>

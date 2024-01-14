@@ -1,5 +1,12 @@
 {
-  "Tags": [],
+  "Tags": [
+    {
+      "Key": "cars"
+    },
+    {
+      "Key": "chatGpt"
+    }
+  ],
   "SeparateRuntimeDependencies": true,
   "IncludeSources": true
 }
